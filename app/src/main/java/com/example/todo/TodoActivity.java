@@ -64,14 +64,13 @@ public class TodoActivity extends AppCompatActivity {
 
     private static final String TODO_INDEX = "todoIndex";
 
-    // override to write the value of mTodoIndex into the Bundle with TODO_INDEX as its key
     /*
-    onSaveInstanceState(Bundle) is called before stop()
-    it saves all view data as bundles (key, value pairs) in the savedInstanceState bundle object
-    additionally, we add the mTodoIndex to the bundle object
+    The rotation causes a stop() event and the callback method onSaveInstanceState(Bundle) is called before stop()
+    onSaveInstanceState, saves all view data as bundles (key, value pairs) in the savedInstanceState bundle object
+    additionally, we add the mTodoIndex to the same bundle object
 
-    onCreate method reconstructs the view from the savedInstanceState
-    and we assign the mTodoIndex from the savedInstanceState to mCurrentIndex
+    Then onCreate method is called and it reconstructs the view from the savedInstanceState
+    after which we assign the mTodoIndex from the savedInstanceState to mCurrentIndex
      */
     @Override
     public void onSaveInstanceState(Bundle savedInstanceState) {
